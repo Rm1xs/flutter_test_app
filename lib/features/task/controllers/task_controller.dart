@@ -13,7 +13,7 @@ class TaskController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    createTasks(5); // Создаем 5 задач при инициализации контроллера
+    createTasks(5);
   }
 
   void createTasks(int count) {
@@ -47,7 +47,7 @@ class TaskController extends GetxController {
         icon: const Icon(Icons.check_circle, color: Colors.white),
         duration: const Duration(seconds: 3),
       );
-      TaskLogger.info('All tasks completed'); // Логируем завершение всех задач
+      TaskLogger.info('All tasks completed');
     }
   }
 

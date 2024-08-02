@@ -8,7 +8,7 @@ import '../models/task_model.dart';
 
 class TaskService {
   Future<void> startTask(TaskModel task, Function updateTask) async {
-    task.status = TaskStatus.running; // Используем enum
+    task.status = TaskStatus.running;
     task.startTime = DateTime.now();
     task.receivePort = ReceivePort();
 
@@ -16,7 +16,7 @@ class TaskService {
       task.progress = message['progress'];
       updateTask();
       if (message['done']) {
-        task.status = TaskStatus.done; // Используем enum
+        task.status = TaskStatus.done;
         task.endTime = DateTime.now();
         task.isolate?.kill(priority: Isolate.immediate);
         task.receivePort?.close();

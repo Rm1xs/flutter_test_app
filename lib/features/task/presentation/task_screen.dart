@@ -63,7 +63,7 @@ class TaskScreen extends GetView<TaskController> {
                                     ? Colors.orange
                                     : task.status == TaskStatus.paused
                                         ? Colors.red
-                                        : Colors.grey, // Статус ожидания
+                                        : Colors.grey,
                           ),
                         ),
                         if (task.status == TaskStatus.running)
