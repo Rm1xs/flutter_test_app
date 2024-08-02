@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:intl/intl.dart';
 
 class TaskLogger {
@@ -19,7 +20,9 @@ class TaskLogger {
     
     final colorCode = _getColorCode(color);
 
-    print('$colorCode$formattedMessage\x1B[0m');
+    if (kDebugMode) {
+      print('$colorCode$formattedMessage\x1B[0m');
+    }
   }
 
   static String _getColorCode(String color) {

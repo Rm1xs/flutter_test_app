@@ -54,21 +54,21 @@ class TaskScreen extends GetView<TaskController> {
                           controller.translateStatus(task.status),
                           style: TextStyle(
                             fontSize: 16,
-                            color: task.status == 'Task is done'
+                            color: task.status == 'done'
                                 ? Colors.green
-                                : task.status == 'Task is running'
+                                : task.status == 'running'
                                     ? Colors.orange
                                     : Colors.red,
                           ),
                         ),
-                        if (task.status == 'Task is running')
+                        if (task.status == 'running')
                           Align(
                             alignment: Alignment.centerRight,
                             child: IconButton(
                               icon: const Icon(Icons.pause, color: Colors.red),
                               onPressed: () {
                                 task.isolate?.pause();
-                                task.status = 'Task is paused';
+                                task.status = 'paused';
                                 controller.tasks.refresh();
                               },
                             ),
