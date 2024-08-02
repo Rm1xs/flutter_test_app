@@ -2,18 +2,21 @@ import 'dart:async';
 import 'dart:isolate';
 import 'dart:math';
 
+import 'package:flutter_test_app/features/task/models/task_status.dart';
+
 import '../models/task_model.dart';
 
 class TaskService {
   Future<void> startTask(TaskModel task, Function updateTask) async {
-    task.status = 'running';
+    task.status = TaskStatus.running; // Используем enum
     task.startTime = DateTime.now();
     task.receivePort = ReceivePort();
+
     task.receivePort!.listen((message) {
       task.progress = message['progress'];
       updateTask();
       if (message['done']) {
-        task.status = 'done';
+        task.status = TaskStatus.done; // Используем enum
         task.endTime = DateTime.now();
         task.isolate?.kill(priority: Isolate.immediate);
         task.receivePort?.close();

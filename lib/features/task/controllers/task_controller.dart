@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test_app/features/task/models/task_status.dart';
 import 'package:flutter_test_app/features/task/services/task_service.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +13,7 @@ class TaskController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    createTasks(5);
+    createTasks(5); // Создаем 5 задач при инициализации контроллера
   }
 
   void createTasks(int count) {
@@ -34,7 +35,7 @@ class TaskController extends GetxController {
   }
 
   void _checkAllTasksComplete() {
-    if (tasks.every((task) => task.status == 'done')) {
+    if (tasks.every((task) => task.status == TaskStatus.done)) {
       Get.snackbar(
         'Усі завдання виконано',
         'Усі завдання були завершені.',
@@ -46,19 +47,19 @@ class TaskController extends GetxController {
         icon: const Icon(Icons.check_circle, color: Colors.white),
         duration: const Duration(seconds: 3),
       );
-      TaskLogger.info('All tasks completed');
+      TaskLogger.info('All tasks completed'); // Логируем завершение всех задач
     }
   }
 
-  String translateStatus(String status) {
+  String translateStatus(TaskStatus status) {
     switch (status) {
-      case 'done':
+      case TaskStatus.done:
         return 'Завдання виконано';
-      case 'running':
+      case TaskStatus.running:
         return 'Завдання виконується';
-      case 'paused':
+      case TaskStatus.paused:
         return 'Завдання призупинено';
-      case 'pending':
+      case TaskStatus.pending:
       default:
         return 'Завдання очікує';
     }

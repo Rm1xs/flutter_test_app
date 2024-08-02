@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/features/task/controllers/task_controller.dart';
+import 'package:flutter_test_app/features/task/models/task_model.dart';
+import 'package:flutter_test_app/features/task/models/task_status.dart';
 import 'package:get/get.dart';
-
-import '../models/task_model.dart';
 
 class TaskScreen extends GetView<TaskController> {
   @override
@@ -10,6 +10,7 @@ class TaskScreen extends GetView<TaskController> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
+        title: const Text('Менеджер завдань'),
       ),
       body: SafeArea(
         child: Padding(
@@ -38,7 +39,9 @@ class TaskScreen extends GetView<TaskController> {
                         const SizedBox(height: 8),
                         task.endTime != null
                             ? Text(
-                                'Час виконання: ${task.endTime!.difference(task.startTime!).inSeconds} с',
+                                task.endTime != null && task.startTime != null
+                                    ? 'Час виконання: ${task.endTime!.difference(task.startTime!).inSeconds} с'
+                                    : 'Час виконання: Невідомо',
                                 style: TextStyle(
                                   fontSize: 16,
                                   color: Colors.grey[700],
@@ -54,21 +57,23 @@ class TaskScreen extends GetView<TaskController> {
                           controller.translateStatus(task.status),
                           style: TextStyle(
                             fontSize: 16,
-                            color: task.status == 'done'
+                            color: task.status == TaskStatus.done
                                 ? Colors.green
-                                : task.status == 'running'
+                                : task.status == TaskStatus.running
                                     ? Colors.orange
-                                    : Colors.red,
+                                    : task.status == TaskStatus.paused
+                                        ? Colors.red
+                                        : Colors.grey, // Статус ожидания
                           ),
                         ),
-                        if (task.status == 'running')
+                        if (task.status == TaskStatus.running)
                           Align(
                             alignment: Alignment.centerRight,
                             child: IconButton(
                               icon: const Icon(Icons.pause, color: Colors.red),
                               onPressed: () {
                                 task.isolate?.pause();
-                                task.status = 'paused';
+                                task.status = TaskStatus.paused;
                                 controller.tasks.refresh();
                               },
                             ),
