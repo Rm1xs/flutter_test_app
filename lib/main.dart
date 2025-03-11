@@ -5,6 +5,7 @@ import 'dependencies.dart';
 import 'features/tournaments/presentation/pages/tournament_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   Dependencies.init();
   runApp(MyApp());
 }

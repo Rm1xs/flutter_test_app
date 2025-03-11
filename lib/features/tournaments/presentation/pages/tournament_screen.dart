@@ -7,7 +7,7 @@ class TournamentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Tournaments')),
+      appBar: AppBar(title: Text('Турніри')),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: TournamentTable(),

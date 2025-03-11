@@ -1,0 +1,142 @@
+[
+    {
+        "id": 1,
+        "name": "Champions League",
+        "start_date": "2024-09-01",
+        "end_date": "2025-05-30",
+        "teams": 32
+    },
+    {
+        "id": 2,
+        "name": "Europa League",
+        "start_date": "2024-09-05",
+        "end_date": "2025-05-27",
+        "teams": 48
+    },
+    {
+        "id": 3,
+        "name": "World Cup 2026",
+        "start_date": "2026-06-08",
+        "end_date": "2026-07-03",
+        "teams": 48
+    },
+    {
+        "id": 4,
+        "name": "Premier League",
+        "start_date": "2024-08-15",
+        "end_date": "2025-05-25",
+        "teams": 20
+    },
+    {
+        "id": 5,
+        "name": "La Liga",
+        "start_date": "2024-08-18",
+        "end_date": "2025-05-23",
+        "teams": 20
+    },
+    {
+        "id": 6,
+        "name": "Serie A",
+        "start_date": "2024-08-20",
+        "end_date": "2025-05-24",
+        "teams": 20
+    },
+    {
+        "id": 7,
+        "name": "Bundesliga",
+        "start_date": "2024-08-23",
+        "end_date": "2025-05-17",
+        "teams": 18
+    },
+    {
+        "id": 8,
+        "name": "Ligue 1",
+        "start_date": "2024-08-16",
+        "end_date": "2025-05-18",
+        "teams": 18
+    },
+    {
+        "id": 9,
+        "name": "Copa América",
+        "start_date": "2024-06-20",
+        "end_date": "2024-07-14",
+        "teams": 16
+    },
+    {
+        "id": 10,
+        "name": "UEFA Nations League",
+        "start_date": "2024-09-05",
+        "end_date": "2024-11-19",
+        "teams": 54
+    },
+    {
+        "id": 11,
+        "name": "African Cup of Nations",
+        "start_date": "2025-01-15",
+        "end_date": "2025-02-12",
+        "teams": 24
+    },
+    {
+        "id": 12,
+        "name": "Asian Cup",
+        "start_date": "2025-06-16",
+        "end_date": "2025-07-13",
+        "teams": 24
+    },
+    {
+        "id": 13,
+        "name": "MLS Season",
+        "start_date": "2025-02-22",
+        "end_date": "2025-12-07",
+        "teams": 29
+    },
+    {
+        "id": 14,
+        "name": "EFL Championship",
+        "start_date": "2024-08-10",
+        "end_date": "2025-05-03",
+        "teams": 24
+    },
+    {
+        "id": 15,
+        "name": "Copa Libertadores",
+        "start_date": "2025-02-15",
+        "end_date": "2025-11-29",
+        "teams": 47
+    },
+    {
+        "id": 16,
+        "name": "FA Cup",
+        "start_date": "2024-11-02",
+        "end_date": "2025-05-17",
+        "teams": 124
+    },
+    {
+        "id": 17,
+        "name": "DFB-Pokal",
+        "start_date": "2024-08-16",
+        "end_date": "2025-05-24",
+        "teams": 64
+    },
+    {
+        "id": 18,
+        "name": "Copa del Rey",
+        "start_date": "2024-10-30",
+        "end_date": "2025-04-26",
+        "teams": 126
+    },
+    {
+        "id": 19,
+        "name": "UEFA Youth League",
+        "start_date": "2024-09-17",
+        "end_date": "2025-04-21",
+        "teams": 64
+    },
+    {
+        "id": 20,
+        "name": "FIFA Club World Cup",
+        "start_date": "2025-06-14",
+        "end_date": "2025-07-13",
+        "teams": 32
+    }
+]
